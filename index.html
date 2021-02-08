@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Localizar IP</title>
+	<!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta property="og:title" content="Localizar IP">
+    <meta property="og:site_name" content="Localizar IP">
+    <meta property="og:url" content="http://lslocalizarip.glitch.me">
+    <meta property="og:description" content="Uma simples aplicação Web, para você conseguir localizar um determinado IP, ou até mesmo o seu próprio IP.">
+    <meta property="og:image" content="https://www.inglesnapontadalingua.com.br/wp-content/uploads/2013/05/Busca.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Localizar">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="keywords" content="Localizar, IP, Localização, Localizar IP, Meu IP">
+    <meta name="author" content="LucasSilvaDev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+  	<link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/1476/1476792.png">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main id="container">
+		<section class="conteudo">
+			<h1>Localizar IP</h1>
+			<input id="input-ip" type="text" placeholder="Digite seu IP" v-model="ip"><br>
+			<button @click="buscarIP()">Localizar</button>
+			<section class="dados">
+				<ul v-if="status">
+					<li>País: <span>{{ results.country }}</span></li>
+					<li>Estado: <span>{{ results.region }}</span></li>
+					<li>Cidade: <span>{{ results.city }}</span></li>
+					<li>Latitude: <span>{{ results.lat }}</span></li>
+					<li>Longitude: <span>{{ results.lon }}</span></li>
+					<li>Fuso Horário: <span>{{ results.timezone }}</span></li>
+					<li>Provedor: <span>{{ results.org }}</span></li>
+				</ul>
+			</section>
+		</section>
+	</main>
+	<!-- VueJS -->
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+	<!-- JS -->
+	<script src="script.js"></script>
+</body>
+</html>
